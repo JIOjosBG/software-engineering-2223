@@ -77,3 +77,8 @@ def test_request_invalid_email(client):
         "password": "password",
     })
     assert response.status_code == 400
+
+def password_test(psw):
+    assert len(psw)>8
+    assert psw.lower()!=psw
+    assert any(char.isdigit() for char in psw)
